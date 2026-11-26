@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6: Measure – Imperial and Metric Measures | Math Tutoring by Deni</title>
+<style>
+  :root{
+    --ink:#1f2a37; --muted:#5b6675; --bg:#f6f7fb; --card:#ffffff;
+    --c1:#2563eb; --c2:#0d9488; --c3:#c2410c;
+    --ok:#15803d; --bad:#b91c1c; --line:#e5e7eb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  header{background:linear-gradient(135deg,#1e3a8a,#0f766e);color:#fff;padding:28px 20px 22px;text-align:center}
+  header .brand{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+  header h1{margin:6px 0 2px;font-size:1.7rem}
+  header .id{color:#dbeafe}
+  .wrap{max-width:900px;margin:0 auto;padding:18px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 18px}
+  .tab{flex:1 1 200px;border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .tab b{display:block}
+  .tab.active{border-color:var(--accent);box-shadow:0 2px 0 var(--accent)}
+  .tab .num{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;text-align:center;font-weight:700;font-size:.85rem;line-height:24px;margin-right:6px}
+  .card{background:var(--card);border-radius:14px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  h2{margin:0 0 4px;color:var(--accent)}
+  h3{margin:18px 0 6px;color:var(--accent);border-bottom:2px solid var(--line);padding-bottom:4px}
+  .en{margin:8px 0 0}
+  .id{display:block;font-size:.82em;font-style:italic;color:var(--muted);margin:0 0 4px}
+  .key{background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;padding:10px 14px;margin:12px 0}
+  table{border-collapse:collapse;margin:10px 0;width:100%;max-width:520px}
+  th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+  th{background:#f1f5f9}
+  .stair{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}
+  .stair span.u{background:var(--accent);color:#fff;border-radius:8px;padding:4px 12px;font-weight:700}
+  .stair span.a{font-size:.85rem;color:var(--muted)}
+  .ex{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0}
+  .ex .tag{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:1px 8px;font-size:.8rem;font-weight:700}
+  .step{margin-left:14px;padding-left:10px;border-left:3px solid var(--line)}
+  .ans{font-weight:700;color:var(--ok)}
+  .q{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .q .n{font-weight:700;color:var(--accent);margin-right:4px}
+  .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+  input[type=text]{font:inherit;padding:6px 10px;border:2px solid var(--line);border-radius:8px;width:140px}
+  button.btn{font:inherit;border:0;border-radius:8px;padding:6px 14px;cursor:pointer;background:var(--accent);color:#fff}
+  button.ghost{background:#eef2f7;color:var(--ink)}
+  .opt{font:inherit;border:2px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;cursor:pointer}
+  .opt.sel{border-color:var(--accent);background:#eff6ff}
+  .fb{font-weight:600}
+  .fb.ok{color:var(--ok)} .fb.bad{color:var(--bad)}
+  .sol{display:none;background:#f8fafc;border-radius:8px;padding:8px 12px;margin-top:8px}
+  .sol.show{display:block}
+  .score{position:sticky;bottom:10px;background:#111827;color:#fff;border-radius:12px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .score .id{color:#cbd5e1}
+  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px}
+  @media print{.tabs,.score,button{display:none}.section{display:block!important}.sol{display:block}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Math Tutoring by Deni</div>
+  <h1>Unit 6: Measure – Imperial and Metric</h1>
+  <span class="id">Unit 6: Pengukuran – Satuan Imperial dan Metrik</span>
+</header>
+
+<div class="wrap">
+  <div class="tabs" id="tabs"></div>
+  <div id="content"></div>
+</div>
+
+<footer>Math Tutoring by Deni · Unit 6 Measure</footer>
+
+<script>
+/* ---------- helpers ---------- */
+const T = (en, id) => `<p class="en">${en}</p><span class="id">${id}</span>`;
+const fmt = s => s; // placeholder
+
+/* ---------- DATA ---------- */
+const sections = [
+/* ===================== 1. METRIC ===================== */
+{
+  color:"#2563eb",
+  title:["Convert between metric units of measure","Mengonversi antar satuan metrik"],
+  materi:`
+    ${T("The metric system is based on powers of 10, so converting between units means multiplying or dividing by 10, 100 or 1000.",
+        "Sistem metrik didasarkan pada perpangkatan 10, sehingga mengonversi satuan berarti mengalikan atau membagi dengan 10, 100, atau 1000.")}
+    ${T("The prefix tells you the size of the unit: <b>kilo</b> means 1000, <b>centi</b> means one hundredth and <b>milli</b> means one thousandth.",
+        "Awalan menunjukkan besar satuan: <b>kilo</b> berarti 1000, <b>senti</b> berarti seperseratus, dan <b>mili</b> berarti seperseribu.")}
+    <h3>Length · Panjang</h3>
+    <table><tr><th>Conversion</th><th>Konversi</th></tr>
+      <tr><td>1 cm = 10 mm</td><td>1 sentimeter = 10 milimeter</td></tr>
+      <tr><td>1 m = 100 cm = 1000 mm</td><td>1 meter = 100 cm = 1000 mm</td></tr>
+      <tr><td>1 km = 1000 m</td><td>1 kilometer = 1000 meter</td></tr></table>
+    <div class="stair"><span class="u">km</span><span class="a">×1000 →</span><span class="u">m</span><span class="a">×100 →</span><span class="u">cm</span><span class="a">×10 →</span><span class="u">mm</span></div>
+    <h3>Mass · Massa</h3>
+    <table><tr><th>Conversion</th><th>Konversi</th></tr>
+      <tr><td>1 g = 1000 mg</td><td>1 gram = 1000 miligram</td></tr>
+      <tr><td>1 kg = 1000 g</td><td>1 kilogram = 1000 gram</td></tr>
+      <tr><td>1 tonne (t) = 1000 kg</td><td>1 ton = 1000 kilogram</td></tr></table>
+    <h3>Capacity · Volume / Kapasitas</h3>
+    <table><tr><th>Conversion</th><th>Konversi</th></tr>
+      <tr><td>1 l = 100 cl = 1000 ml</td><td>1 liter = 100 sentiliter = 1000 mililiter</td></tr>
+      <tr><td>1 ml = 1 cm³</td><td>1 mililiter = 1 sentimeter kubik</td></tr></table>
+    <div class="key">
+      ${T("<b>Rule:</b> From a <b>larger</b> unit to a <b>smaller</b> unit, <b>multiply</b>.",
+          "<b>Aturan:</b> Dari satuan <b>lebih besar</b> ke satuan <b>lebih kecil</b>, <b>kalikan</b>.")}
+      ${T("From a <b>smaller</b> unit to a <b>larger</b> unit, <b>divide</b>.",
+          "Dari satuan <b>lebih kecil</b> ke satuan <b>lebih besar</b>, <b>bagi</b>.")}
+      ${T("Check: a smaller unit always gives a bigger number (for example, 2 m = 200 cm).",
+          "Cek: satuan yang lebih kecil selalu menghasilkan angka yang lebih besar (misalnya, 2 m = 200 cm).")}
+    </div>`,
+  examples:[
+    {q:["Convert 3.5 km to metres.","Ubah 3,5 km ke meter."],
+     steps:[["Kilometres to metres is large to small, so multiply by 1000.","Kilometer ke meter adalah dari besar ke kecil, jadi kalikan dengan 1000."],
+            ["3.5 × 1000 = 3500","3,5 × 1000 = 3500"]],
+     ans:["3.5 km = 3500 m","3,5 km = 3500 m"]},
+    {q:["Convert 2450 g to kilograms.","Ubah 2450 g ke kilogram."],
+     steps:[["Grams to kilograms is small to large, so divide by 1000.","Gram ke kilogram adalah dari kecil ke besar, jadi bagi dengan 1000."],
+            ["2450 ÷ 1000 = 2.45","2450 ÷ 1000 = 2,45"]],
+     ans:["2450 g = 2.45 kg","2450 g = 2,45 kg"]},
+    {q:["Convert 65 mm to metres.","Ubah 65 mm ke meter."],
+     steps:[["There is no direct step, so go through centimetres first.","Tidak ada langkah langsung, jadi ubah ke sentimeter terlebih dahulu."],
+            ["65 mm ÷ 10 = 6.5 cm","65 mm ÷ 10 = 6,5 cm"],
+            ["6.5 cm ÷ 100 = 0.065 m (or 65 ÷ 1000 = 0.065 m in one step)","6,5 cm ÷ 100 = 0,065 m (atau 65 ÷ 1000 = 0,065 m dalam satu langkah)"]],
+     ans:["65 mm = 0.065 m","65 mm = 0,065 m"]}
+  ],
+  practice:[
+    {q:["Convert 7 cm to millimetres.","Ubah 7 cm ke milimeter."],a:70,u:"mm",sol:[["7 × 10 = 70 mm","7 × 10 = 70 mm"]]},
+    {q:["Convert 450 cm to metres.","Ubah 450 cm ke meter."],a:4.5,u:"m",sol:[["450 ÷ 100 = 4.5 m","450 ÷ 100 = 4,5 m"]]},
+    {q:["Convert 2.3 km to metres.","Ubah 2,3 km ke meter."],a:2300,u:"m",sol:[["2.3 × 1000 = 2300 m","2,3 × 1000 = 2300 m"]]},
+    {q:["Convert 8500 m to kilometres.","Ubah 8500 m ke kilometer."],a:8.5,u:"km",sol:[["8500 ÷ 1000 = 8.5 km","8500 ÷ 1000 = 8,5 km"]]},
+    {q:["Convert 3.2 kg to grams.","Ubah 3,2 kg ke gram."],a:3200,u:"g",sol:[["3.2 × 1000 = 3200 g","3,2 × 1000 = 3200 g"]]},
+    {q:["Convert 750 g to kilograms.","Ubah 750 g ke kilogram."],a:0.75,u:"kg",sol:[["750 ÷ 1000 = 0.75 kg","750 ÷ 1000 = 0,75 kg"]]},
+    {q:["Convert 1.8 litres to millilitres.","Ubah 1,8 liter ke mililiter."],a:1800,u:"ml",sol:[["1.8 × 1000 = 1800 ml","1,8 × 1000 = 1800 ml"]]},
+    {q:["Convert 2500 ml to litres.","Ubah 2500 ml ke liter."],a:2.5,u:"l",sol:[["2500 ÷ 1000 = 2.5 l","2500 ÷ 1000 = 2,5 l"]]},
+    {q:["Convert 4.5 tonnes to kilograms.","Ubah 4,5 ton ke kilogram."],a:4500,u:"kg",sol:[["4.5 × 1000 = 4500 kg","4,5 × 1000 = 4500 kg"]]},
+    {q:["Convert 0.6 m to millimetres.","Ubah 0,6 m ke milimeter."],a:600,u:"mm",sol:[["1 m = 1000 mm, so 0.6 × 1000 = 600 mm","1 m = 1000 mm, jadi 0,6 × 1000 = 600 mm"]]}
+  ]
+},
+/* ===================== 2. MILES & KM ===================== */
+{
+  color:"#0d9488",
+  title:["Convert between miles and kilometres","Mengonversi antara mil dan kilometer"],
+  materi:`
+    ${T("Miles are an <b>imperial</b> unit of length, still used on road signs in the UK and the USA.",
+        "Mil adalah satuan panjang <b>imperial</b> yang masih digunakan pada rambu jalan di Inggris dan Amerika Serikat.")}
+    ${T("Kilometres are the <b>metric</b> unit used in most countries, including Indonesia.",
+        "Kilometer adalah satuan <b>metrik</b> yang digunakan di sebagian besar negara, termasuk Indonesia.")}
+    <div class="key">
+      ${T("<b>Key fact:</b> 5 miles ≈ 8 km",
+          "<b>Fakta penting:</b> 5 mil ≈ 8 km")}
+      ${T("So 1 mile ≈ 1.6 km and 1 km ≈ 0.625 miles (that is, 5/8 of a mile).",
+          "Jadi 1 mil ≈ 1,6 km dan 1 km ≈ 0,625 mil (yaitu 5/8 mil).")}
+      ${T("The symbol ≈ means \"is approximately equal to\".",
+          "Simbol ≈ berarti \"kira-kira sama dengan\".")}
+    </div>
+    <h3>Method · Cara</h3>
+    <table><tr><th>Miles → km</th><th>km → Miles</th></tr>
+      <tr><td>÷ 5, then × 8 <br><span class="id">bagi 5, lalu kali 8</span></td><td>÷ 8, then × 5 <br><span class="id">bagi 8, lalu kali 5</span></td></tr>
+      <tr><td>or × 1.6 <br><span class="id">atau kali 1,6</span></td><td>or ÷ 1.6 (× 0.625) <br><span class="id">atau bagi 1,6 (kali 0,625)</span></td></tr></table>
+    ${T("A mile is longer than a kilometre, so the number of kilometres is always bigger than the number of miles.",
+        "Satu mil lebih panjang daripada satu kilometer, jadi angka dalam kilometer selalu lebih besar daripada angka dalam mil.")}
+    ${T("You can also use a ratio table: 5 miles : 8 km, 10 miles : 16 km, 50 miles : 80 km.",
+        "Kamu juga bisa menggunakan tabel rasio: 5 mil : 8 km, 10 mil : 16 km, 50 mil : 80 km.")}`,
+  examples:[
+    {q:["Convert 25 miles to kilometres.","Ubah 25 mil ke kilometer."],
+     steps:[["Use 5 miles ≈ 8 km. Find how many groups of 5 miles: 25 ÷ 5 = 5.","Gunakan 5 mil ≈ 8 km. Cari berapa kelompok 5 mil: 25 ÷ 5 = 5."],
+            ["Each group is 8 km: 5 × 8 = 40.","Setiap kelompok adalah 8 km: 5 × 8 = 40."]],
+     ans:["25 miles ≈ 40 km","25 mil ≈ 40 km"]},
+    {q:["Convert 56 km to miles.","Ubah 56 km ke mil."],
+     steps:[["Find how many groups of 8 km: 56 ÷ 8 = 7.","Cari berapa kelompok 8 km: 56 ÷ 8 = 7."],
+            ["Each group is 5 miles: 7 × 5 = 35.","Setiap kelompok adalah 5 mil: 7 × 5 = 35."]],
+     ans:["56 km ≈ 35 miles","56 km ≈ 35 mil"]},
+    {q:["Which is further: 70 miles or 110 km?","Mana yang lebih jauh: 70 mil atau 110 km?"],
+     steps:[["Convert to the same unit. 70 ÷ 5 = 14, then 14 × 8 = 112 km.","Ubah ke satuan yang sama. 70 ÷ 5 = 14, lalu 14 × 8 = 112 km."],
+            ["Compare: 112 km > 110 km.","Bandingkan: 112 km > 110 km."]],
+     ans:["70 miles is further.","70 mil lebih jauh."]}
+  ],
+  practice:[
+    {q:["Convert 10 miles to kilometres.","Ubah 10 mil ke kilometer."],a:16,u:"km",sol:[["10 ÷ 5 = 2, 2 × 8 = 16 km","10 ÷ 5 = 2, 2 × 8 = 16 km"]]},
+    {q:["Convert 35 miles to kilometres.","Ubah 35 mil ke kilometer."],a:56,u:"km",sol:[["35 ÷ 5 = 7, 7 × 8 = 56 km","35 ÷ 5 = 7, 7 × 8 = 56 km"]]},
+    {q:["Convert 40 km to miles.","Ubah 40 km ke mil."],a:25,u:"miles",sol:[["40 ÷ 8 = 5, 5 × 5 = 25 miles","40 ÷ 8 = 5, 5 × 5 = 25 mil"]]},
+    {q:["Convert 72 km to miles.","Ubah 72 km ke mil."],a:45,u:"miles",sol:[["72 ÷ 8 = 9, 9 × 5 = 45 miles","72 ÷ 8 = 9, 9 × 5 = 45 mil"]]},
+    {q:["Convert 3 miles to kilometres.","Ubah 3 mil ke kilometer."],a:4.8,u:"km",sol:[["1 mile ≈ 1.6 km, so 3 × 1.6 = 4.8 km","1 mil ≈ 1,6 km, jadi 3 × 1,6 = 4,8 km"]]},
+    {q:["Convert 100 km to miles.","Ubah 100 km ke mil."],a:62.5,u:"miles",sol:[["100 ÷ 8 = 12.5, 12.5 × 5 = 62.5 miles","100 ÷ 8 = 12,5, 12,5 × 5 = 62,5 mil"]]},
+    {q:["A road sign says London is 150 miles away. How far is this in kilometres?","Sebuah rambu jalan menunjukkan London berjarak 150 mil. Berapa jaraknya dalam kilometer?"],a:240,u:"km",sol:[["150 ÷ 5 = 30, 30 × 8 = 240 km","150 ÷ 5 = 30, 30 × 8 = 240 km"]]},
+    {q:["Convert 20 km to miles.","Ubah 20 km ke mil."],a:12.5,u:"miles",sol:[["20 ÷ 8 = 2.5, 2.5 × 5 = 12.5 miles","20 ÷ 8 = 2,5, 2,5 × 5 = 12,5 mil"]]},
+    {q:["Which is further: 45 miles or 75 km?","Mana yang lebih jauh: 45 mil atau 75 km?"],opts:["45 miles","75 km","They are equal"],optsId:["45 mil","75 km","Sama jauh"],a:1,
+     sol:[["45 ÷ 5 = 9, 9 × 8 = 72 km. Since 75 km > 72 km, 75 km is further.","45 ÷ 5 = 9, 9 × 8 = 72 km. Karena 75 km > 72 km, maka 75 km lebih jauh."]]},
+    {q:["The speed limit on a road is 60 miles per hour. What is this in km per hour?","Batas kecepatan di suatu jalan adalah 60 mil per jam. Berapa nilainya dalam km per jam?"],a:96,u:"km/h",sol:[["60 ÷ 5 = 12, 12 × 8 = 96 km/h","60 ÷ 5 = 12, 12 × 8 = 96 km/jam"]]}
+  ]
+},
+/* ===================== 3. PROBLEM SOLVING ===================== */
+{
+  color:"#c2410c",
+  title:["Solve problems involving calculations and conversions of units of measure","Menyelesaikan soal yang melibatkan perhitungan dan konversi satuan ukuran"],
+  materi:`
+    ${T("In real-life problems, the measurements are often given in <b>different units</b>.",
+        "Dalam soal kehidupan sehari-hari, ukuran sering diberikan dalam <b>satuan yang berbeda</b>.")}
+    ${T("Before you add, subtract, multiply or divide, you must change them into the <b>same unit</b>.",
+        "Sebelum menjumlah, mengurangi, mengalikan, atau membagi, kamu harus mengubahnya ke <b>satuan yang sama</b>.")}
+    <div class="key">
+      <b>Steps · Langkah-langkah</b>
+      ${T("1. Read the question carefully and underline the units.",
+          "1. Baca soal dengan teliti dan garis bawahi satuannya.")}
+      ${T("2. Convert all measurements to the same unit.",
+          "2. Ubah semua ukuran ke satuan yang sama.")}
+      ${T("3. Do the calculation.",
+          "3. Lakukan perhitungan.")}
+      ${T("4. Write the answer with the unit the question asks for, and check that it is sensible.",
+          "4. Tulis jawaban dengan satuan yang diminta soal, lalu cek apakah jawabannya masuk akal.")}
+    </div>
+    <h3>Useful imperial conversions · Konversi imperial yang berguna</h3>
+    ${T("These are approximate. In a test, the conversion is usually given in the question.",
+        "Nilai-nilai ini adalah perkiraan. Dalam ujian, konversinya biasanya diberikan di soal.")}
+    <table><tr><th>Imperial</th><th>Metric (≈)</th></tr>
+      <tr><td>1 inch</td><td>≈ 2.5 cm</td></tr>
+      <tr><td>1 foot (12 inches)</td><td>≈ 30 cm</td></tr>
+      <tr><td>5 miles</td><td>≈ 8 km</td></tr>
+      <tr><td>2.2 pounds (lb)</td><td>≈ 1 kg</td></tr>
+      <tr><td>1 gallon</td><td>≈ 4.5 litres</td></tr></table>
+    ${T("A common mistake is adding numbers with different units, for example 2 m + 50 cm = 52. The correct answer is 2.5 m or 250 cm.",
+        "Kesalahan yang sering terjadi adalah menjumlahkan angka dengan satuan berbeda, misalnya 2 m + 50 cm = 52. Jawaban yang benar adalah 2,5 m atau 250 cm.")}`,
+  examples:[
+    {q:["A bottle holds 1.5 litres of juice. How many 250 ml glasses can be filled from the bottle?","Sebuah botol berisi 1,5 liter jus. Berapa gelas berukuran 250 ml yang dapat diisi dari botol tersebut?"],
+     steps:[["Change litres to millilitres: 1.5 × 1000 = 1500 ml.","Ubah liter ke mililiter: 1,5 × 1000 = 1500 ml."],
+            ["Divide: 1500 ÷ 250 = 6.","Bagi: 1500 ÷ 250 = 6."]],
+     ans:["6 glasses","6 gelas"]},
+    {q:["A rope is 5 m long. It is cut into pieces that are each 40 cm long. How many pieces are there, and how much rope is left over?","Seutas tali panjangnya 5 m. Tali dipotong menjadi beberapa bagian yang masing-masing panjangnya 40 cm. Berapa banyak potongan, dan berapa sisa talinya?"],
+     steps:[["Change metres to centimetres: 5 × 100 = 500 cm.","Ubah meter ke sentimeter: 5 × 100 = 500 cm."],
+            ["500 ÷ 40 = 12 remainder 20 (because 12 × 40 = 480).","500 ÷ 40 = 12 sisa 20 (karena 12 × 40 = 480)."]],
+     ans:["12 pieces, with 20 cm left over.","12 potongan, dengan sisa 20 cm."]},
+    {q:["A journey is 150 miles. A car uses 1 litre of petrol for every 12 km. How many litres of petrol does the car use? (5 miles ≈ 8 km)","Sebuah perjalanan berjarak 150 mil. Sebuah mobil menggunakan 1 liter bensin untuk setiap 12 km. Berapa liter bensin yang digunakan mobil itu? (5 mil ≈ 8 km)"],
+     steps:[["Change miles to km: 150 ÷ 5 = 30, 30 × 8 = 240 km.","Ubah mil ke km: 150 ÷ 5 = 30, 30 × 8 = 240 km."],
+            ["Petrol used: 240 ÷ 12 = 20.","Bensin yang digunakan: 240 ÷ 12 = 20."]],
+     ans:["20 litres","20 liter"]}
+  ],
+  practice:[
+    {q:["A bag contains 2 kg of sugar. One cake needs 250 g of sugar. How many cakes can be made?","Sebuah kantong berisi 2 kg gula. Satu kue membutuhkan 250 g gula. Berapa kue yang dapat dibuat?"],a:8,u:"cakes / kue",sol:[["2 kg = 2000 g; 2000 ÷ 250 = 8 cakes","2 kg = 2000 g; 2000 ÷ 250 = 8 kue"]]},
+    {q:["Find the total length of 1.2 m + 45 cm + 300 mm. Give your answer in cm.","Tentukan panjang total dari 1,2 m + 45 cm + 300 mm. Tuliskan jawabanmu dalam cm."],a:195,u:"cm",sol:[["1.2 m = 120 cm, 300 mm = 30 cm; 120 + 45 + 30 = 195 cm","1,2 m = 120 cm, 300 mm = 30 cm; 120 + 45 + 30 = 195 cm"]]},
+    {q:["A jug holds 2 litres of water. Sari pours out 650 ml. How much water is left, in ml?","Sebuah teko berisi 2 liter air. Sari menuangkan 650 ml. Berapa sisa air dalam ml?"],a:1350,u:"ml",sol:[["2 l = 2000 ml; 2000 − 650 = 1350 ml","2 l = 2000 ml; 2000 − 650 = 1350 ml"]]},
+    {q:["A ribbon 3 m long is cut into pieces of 25 cm. How many pieces are there?","Sebuah pita sepanjang 3 m dipotong menjadi bagian-bagian berukuran 25 cm. Berapa banyak potongannya?"],a:12,u:"pieces / potong",sol:[["3 m = 300 cm; 300 ÷ 25 = 12 pieces","3 m = 300 cm; 300 ÷ 25 = 12 potong"]]},
+    {q:["A lift can carry a maximum of 1 tonne. 12 people with an average mass of 75 kg get in. How many more kilograms can the lift carry?","Sebuah lift dapat mengangkut maksimal 1 ton. 12 orang dengan massa rata-rata 75 kg masuk ke dalamnya. Berapa kilogram lagi yang masih dapat diangkut lift?"],a:100,u:"kg",sol:[["12 × 75 = 900 kg; 1 tonne = 1000 kg; 1000 − 900 = 100 kg","12 × 75 = 900 kg; 1 ton = 1000 kg; 1000 − 900 = 100 kg"]]},
+    {q:["Juice costs Rp4,000 for 500 ml. How much do 3 litres of juice cost, in rupiah?","Harga jus adalah Rp4.000 per 500 ml. Berapa harga 3 liter jus dalam rupiah?"],a:24000,u:"Rp",sol:[["3 l = 3000 ml; 3000 ÷ 500 = 6; 6 × 4000 = Rp24,000","3 l = 3000 ml; 3000 ÷ 500 = 6; 6 × 4000 = Rp24.000"]]},
+    {q:["Budi runs 5 laps of a 400 m track every day for 6 days. How many kilometres does he run in total?","Budi berlari 5 putaran di lintasan 400 m setiap hari selama 6 hari. Berapa kilometer total yang ia tempuh?"],a:12,u:"km",sol:[["5 × 400 × 6 = 12 000 m; 12 000 ÷ 1000 = 12 km","5 × 400 × 6 = 12.000 m; 12.000 ÷ 1000 = 12 km"]]},
+    {q:["Tom is 5 feet tall. Use 1 foot ≈ 30 cm to find his height in cm.","Tinggi Tom adalah 5 kaki. Gunakan 1 kaki ≈ 30 cm untuk menentukan tingginya dalam cm."],a:150,u:"cm",sol:[["5 × 30 = 150 cm","5 × 30 = 150 cm"]]},
+    {q:["A baby has a mass of 4 kg. Use 1 kg ≈ 2.2 pounds to find the baby's mass in pounds.","Massa seorang bayi adalah 4 kg. Gunakan 1 kg ≈ 2,2 pon untuk menentukan massa bayi dalam pon."],a:8.8,u:"pounds / pon",sol:[["4 × 2.2 = 8.8 pounds","4 × 2,2 = 8,8 pon"]]},
+    {q:["Two towns are 90 miles apart. A bus travels at 48 km per hour. How many hours does the journey take? (5 miles ≈ 8 km)","Dua kota berjarak 90 mil. Sebuah bus melaju dengan kecepatan 48 km per jam. Berapa jam waktu perjalanannya? (5 mil ≈ 8 km)"],a:3,u:"hours / jam",sol:[["90 ÷ 5 = 18, 18 × 8 = 144 km; 144 ÷ 48 = 3 hours","90 ÷ 5 = 18, 18 × 8 = 144 km; 144 ÷ 48 = 3 jam"]]}
+  ]
+}
+];
+
+/* ---------- RENDER ---------- */
+const tabsEl = document.getElementById("tabs");
+const contentEl = document.getElementById("content");
+const state = sections.map(s => s.practice.map(() => null)); // true/false/null
+let current = 0;
+
+function renderTabs(){
+  tabsEl.innerHTML = sections.map((s,i)=>`
+    <button class="tab ${i===current?'active':''}" style="--accent:${s.color}" onclick="go(${i})">
+      <b><span class="num">${i+1}</span>${s.title[0]}</b>
+      <span class="id">${s.title[1]}</span>
+    </button>`).join("");
+}
+
+function renderSection(i){
+  const s = sections[i];
+  const ex = s.examples.map((e,k)=>`
+    <div class="ex"><span class="tag">Example ${k+1} · Contoh ${k+1}</span>
+      ${T(e.q[0],e.q[1])}
+      <div class="step">${e.steps.map(st=>T(st[0],st[1])).join("")}</div>
+      ${T(`<span class="ans">Answer: ${e.ans[0]}</span>`,`Jawaban: ${e.ans[1]}`)}
+    </div>`).join("");
+
+  const pr = s.practice.map((p,k)=>{
+    let input;
+    if(p.opts){
+      input = `<div class="row">${p.opts.map((o,j)=>`<button class="opt" id="o${i}_${k}_${j}" onclick="pick(${i},${k},${j})">${o}<br><span class="id">${p.optsId[j]}</span></button>`).join("")}</div>`;
+    } else {
+      input = `<div class="row"><input type="text" id="in${i}_${k}" placeholder="answer / jawaban" onkeydown="if(event.key==='Enter')check(${i},${k})"> <b>${p.u}</b>
+        <button class="btn" onclick="check(${i},${k})">Check · Cek</button></div>`;
+    }
+    return `<div class="q"><span class="n">${k+1}.</span>${T(p.q[0],p.q[1])}
+      ${input}
+      <div class="row"><span class="fb" id="fb${i}_${k}"></span>
+      <button class="btn ghost" onclick="toggleSol(${i},${k})">Show solution · Lihat pembahasan</button></div>
+      <div class="sol" id="sol${i}_${k}">${p.sol.map(x=>T(x[0],x[1])).join("")}</div></div>`;
+  }).join("");
+
+  contentEl.innerHTML = `
+  <div class="section" style="--accent:${s.color}">
+    <div class="card"><h2>${i+1}. ${s.title[0]}</h2><span class="id">${s.title[1]}</span></div>
+    <div class="card"><h3>📘 Lesson · Materi</h3>${s.materi}</div>
+    <div class="card"><h3>✏️ Worked Examples · Pembahasan 3 Soal</h3>${ex}</div>
+    <div class="card"><h3>🧠 Practice · Latihan 10 Soal</h3>
+      ${T("Type your answer as a number (use a decimal point, e.g. 4.5), then press Check.","Ketik jawabanmu dalam bentuk angka (gunakan titik desimal, misalnya 4.5), lalu tekan Cek.")}
+      ${pr}</div>
+    <div class="score" style="--accent:${s.color}"><div id="sc"></div>
+      <button class="btn" onclick="resetSec(${i})">Reset</button></div>
+  </div>`;
+  updateScore();
+}
+
+function parseNum(v){
+  v = v.trim().replace(/\s/g,"").replace(/rp/i,"");
+  // allow comma as decimal if single comma and no dot
+  if(/^\d+,\d+$/.test(v) && !/^\d{1,3},\d{3}$/.test(v)) v = v.replace(",",".");
+  v = v.replace(/,/g,"");
+  return parseFloat(v);
+}
+function check(i,k){
+  const p = sections[i].practice[k];
+  const v = parseNum(document.getElementById(`in${i}_${k}`).value);
+  const ok = !isNaN(v) && Math.abs(v - p.a) < 1e-6 * Math.max(1,Math.abs(p.a)) + 0.001;
+  mark(i,k,ok);
+}
+function pick(i,k,j){
+  const p = sections[i].practice[k];
+  p.opts.forEach((_,x)=>document.getElementById(`o${i}_${k}_${x}`).classList.toggle("sel",x===j));
+  mark(i,k,j===p.a);
+}
+function mark(i,k,ok){
+  state[i][k] = ok;
+  const fb = document.getElementById(`fb${i}_${k}`);
+  fb.className = "fb " + (ok?"ok":"bad");
+  fb.innerHTML = ok ? "✔ Correct! · Benar!" : "✘ Try again · Coba lagi";
+  updateScore();
+}
+function toggleSol(i,k){ document.getElementById(`sol${i}_${k}`).classList.toggle("show"); }
+function updateScore(){
+  const c = state[current].filter(x=>x===true).length;
+  const el = document.getElementById("sc");
+  if(el) el.innerHTML = `Score: <b>${c} / 10</b> <span class="id" style="display:inline">· Skor: ${c} / 10</span>`;
+}
+function resetSec(i){ state[i] = state[i].map(()=>null); renderSection(i); }
+function go(i){ current=i; renderTabs(); renderSection(i); window.scrollTo({top:0,behavior:"smooth"}); }
+
+go(0);
+</script>
+</body>
+</html>
