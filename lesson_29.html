@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 6: Measure – Imperial and Metric Measures | Math Tutoring by Deni</title>
+<title>Unit 6 &amp; 7: Measure, Ratio and Proportion | Math Tutoring by Deni</title>
 <style>
   :root{
     --ink:#1f2a37; --muted:#5b6675; --bg:#f6f7fb; --card:#ffffff;
@@ -18,7 +18,7 @@
   header .id{color:#dbeafe}
   .wrap{max-width:900px;margin:0 auto;padding:18px}
   .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 18px}
-  .tab{flex:1 1 200px;border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .tab{flex:1 1 160px;border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;cursor:pointer;text-align:left;font:inherit;color:inherit}
   .tab b{display:block}
   .tab.active{border-color:var(--accent);box-shadow:0 2px 0 var(--accent)}
   .tab .num{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;text-align:center;font-weight:700;font-size:.85rem;line-height:24px;margin-right:6px}
@@ -59,8 +59,8 @@
 <body>
 <header>
   <div class="brand">Math Tutoring by Deni</div>
-  <h1>Unit 6: Measure – Imperial and Metric</h1>
-  <span class="id">Unit 6: Pengukuran – Satuan Imperial dan Metrik</span>
+  <h1>Unit 6: Measure – Imperial and Metric<br>Unit 7: Ratio and Proportion</h1>
+  <span class="id">Unit 6: Pengukuran – Satuan Imperial dan Metrik · Unit 7: Rasio dan Proporsi</span>
 </header>
 
 <div class="wrap">
@@ -68,7 +68,7 @@
   <div id="content"></div>
 </div>
 
-<footer>Math Tutoring by Deni · Unit 6 Measure</footer>
+<footer>Math Tutoring by Deni · Unit 6 Measure · Unit 7 Ratio and Proportion</footer>
 
 <script>
 /* ---------- helpers ---------- */
@@ -79,7 +79,7 @@ const fmt = s => s; // placeholder
 const sections = [
 /* ===================== 1. METRIC ===================== */
 {
-  color:"#2563eb",
+  unit:6, color:"#2563eb",
   title:["Convert between metric units of measure","Mengonversi antar satuan metrik"],
   materi:`
     ${T("The metric system is based on powers of 10, so converting between units means multiplying or dividing by 10, 100 or 1000.",
@@ -139,7 +139,7 @@ const sections = [
 },
 /* ===================== 2. MILES & KM ===================== */
 {
-  color:"#0d9488",
+  unit:6, color:"#0d9488",
   title:["Convert between miles and kilometres","Mengonversi antara mil dan kilometer"],
   materi:`
     ${T("Miles are an <b>imperial</b> unit of length, still used on road signs in the UK and the USA.",
@@ -192,7 +192,7 @@ const sections = [
 },
 /* ===================== 3. PROBLEM SOLVING ===================== */
 {
-  color:"#c2410c",
+  unit:6, color:"#c2410c",
   title:["Solve problems involving calculations and conversions of units of measure","Menyelesaikan soal yang melibatkan perhitungan dan konversi satuan ukuran"],
   materi:`
     ${T("In real-life problems, the measurements are often given in <b>different units</b>.",
@@ -247,6 +247,127 @@ const sections = [
     {q:["A baby has a mass of 4 kg. Use 1 kg ≈ 2.2 pounds to find the baby's mass in pounds.","Massa seorang bayi adalah 4 kg. Gunakan 1 kg ≈ 2,2 pon untuk menentukan massa bayi dalam pon."],a:8.8,u:"pounds / pon",sol:[["4 × 2.2 = 8.8 pounds","4 × 2,2 = 8,8 pon"]]},
     {q:["Two towns are 90 miles apart. A bus travels at 48 km per hour. How many hours does the journey take? (5 miles ≈ 8 km)","Dua kota berjarak 90 mil. Sebuah bus melaju dengan kecepatan 48 km per jam. Berapa jam waktu perjalanannya? (5 mil ≈ 8 km)"],a:3,u:"hours / jam",sol:[["90 ÷ 5 = 18, 18 × 8 = 144 km; 144 ÷ 48 = 3 hours","90 ÷ 5 = 18, 18 × 8 = 144 km; 144 ÷ 48 = 3 jam"]]}
   ]
+},
+/* ===================== 4. RATIO NOTATION ===================== */
+{
+  unit:7, color:"#7c3aed",
+  title:["Understand ratio notation","Memahami notasi rasio"],
+  materi:`
+    ${T("A <b>ratio</b> compares two or more quantities of the same kind.",
+        "<b>Rasio</b> membandingkan dua besaran atau lebih yang sejenis.")}
+    ${T("We write a ratio with a colon, for example 3 : 2, which we read as \"3 to 2\".",
+        "Rasio ditulis dengan tanda titik dua, misalnya 3 : 2, yang dibaca \"3 banding 2\".")}
+    ${T("The <b>order</b> matters: if there are 3 cats and 2 dogs, then cats : dogs = 3 : 2, but dogs : cats = 2 : 3.",
+        "<b>Urutan</b> itu penting: jika ada 3 kucing dan 2 anjing, maka kucing : anjing = 3 : 2, tetapi anjing : kucing = 2 : 3.")}
+    <h3>Simplifying ratios · Menyederhanakan rasio</h3>
+    ${T("To simplify a ratio, divide every part by the <b>highest common factor (HCF)</b>.",
+        "Untuk menyederhanakan rasio, bagi setiap bagian dengan <b>faktor persekutuan terbesar (FPB)</b>.")}
+    ${T("Example: 12 : 18, the HCF is 6, so 12 : 18 = 2 : 3.",
+        "Contoh: 12 : 18, FPB-nya 6, jadi 12 : 18 = 2 : 3.")}
+    ${T("Ratios that simplify to the same ratio are called <b>equivalent ratios</b>, for example 2 : 3 = 4 : 6 = 10 : 15.",
+        "Rasio-rasio yang dapat disederhanakan menjadi rasio yang sama disebut <b>rasio senilai</b>, misalnya 2 : 3 = 4 : 6 = 10 : 15.")}
+    <div class="key">
+      ${T("<b>Units:</b> before simplifying, write both quantities in the <b>same unit</b>. Then leave the units out of the ratio.",
+          "<b>Satuan:</b> sebelum menyederhanakan, tulis kedua besaran dalam <b>satuan yang sama</b>. Setelah itu, satuan tidak ditulis dalam rasio.")}
+      ${T("Example: 30 cm : 1 m = 30 cm : 100 cm = 30 : 100 = 3 : 10.",
+          "Contoh: 30 cm : 1 m = 30 cm : 100 cm = 30 : 100 = 3 : 10.")}
+    </div>
+    <h3>The form 1 : n · Bentuk 1 : n</h3>
+    ${T("To write a ratio in the form 1 : n, divide both parts by the first number.",
+        "Untuk menulis rasio dalam bentuk 1 : n, bagi kedua bagian dengan bilangan pertama.")}
+    ${T("Example: 4 : 10 = (4 ÷ 4) : (10 ÷ 4) = 1 : 2.5. The value of n can be a decimal.",
+        "Contoh: 4 : 10 = (4 ÷ 4) : (10 ÷ 4) = 1 : 2,5. Nilai n boleh berupa desimal.")}
+    <h3>Ratios and fractions · Rasio dan pecahan</h3>
+    ${T("If cats : dogs = 3 : 2, there are 3 + 2 = 5 parts altogether.",
+        "Jika kucing : anjing = 3 : 2, maka seluruhnya ada 3 + 2 = 5 bagian.")}
+    ${T("So 3/5 of the animals are cats and 2/5 are dogs.",
+        "Jadi 3/5 dari hewan tersebut adalah kucing dan 2/5 adalah anjing.")}`,
+  examples:[
+    {q:["A class has 12 boys and 18 girls. Write the ratio of boys to girls in its simplest form.","Sebuah kelas memiliki 12 siswa laki-laki dan 18 siswa perempuan. Tuliskan rasio laki-laki terhadap perempuan dalam bentuk paling sederhana."],
+     steps:[["Write the ratio in the correct order: boys : girls = 12 : 18.","Tulis rasio sesuai urutan: laki-laki : perempuan = 12 : 18."],
+            ["The HCF of 12 and 18 is 6. Divide both parts by 6: 12 ÷ 6 = 2, 18 ÷ 6 = 3.","FPB dari 12 dan 18 adalah 6. Bagi kedua bagian dengan 6: 12 ÷ 6 = 2, 18 ÷ 6 = 3."]],
+     ans:["2 : 3","2 : 3"]},
+    {q:["Simplify the ratio 50 cm : 2 m.","Sederhanakan rasio 50 cm : 2 m."],
+     steps:[["Change to the same unit: 2 m = 200 cm, so the ratio is 50 : 200.","Ubah ke satuan yang sama: 2 m = 200 cm, jadi rasionya 50 : 200."],
+            ["The HCF is 50: 50 ÷ 50 = 1, 200 ÷ 50 = 4.","FPB-nya 50: 50 ÷ 50 = 1, 200 ÷ 50 = 4."]],
+     ans:["1 : 4","1 : 4"]},
+    {q:["Write the ratio 4 : 10 in the form 1 : n.","Tuliskan rasio 4 : 10 dalam bentuk 1 : n."],
+     steps:[["Divide both parts by the first number, 4.","Bagi kedua bagian dengan bilangan pertama, yaitu 4."],
+            ["4 ÷ 4 = 1 and 10 ÷ 4 = 2.5","4 ÷ 4 = 1 dan 10 ÷ 4 = 2,5"]],
+     ans:["1 : 2.5","1 : 2,5"]}
+  ],
+  practice:[
+    {q:["Simplify 6 : 9.","Sederhanakan 6 : 9."],r:[2,3],sol:[["HCF = 3; 6 ÷ 3 = 2, 9 ÷ 3 = 3, so 2 : 3","FPB = 3; 6 ÷ 3 = 2, 9 ÷ 3 = 3, jadi 2 : 3"]]},
+    {q:["Simplify 20 : 35.","Sederhanakan 20 : 35."],r:[4,7],sol:[["HCF = 5; 20 ÷ 5 = 4, 35 ÷ 5 = 7, so 4 : 7","FPB = 5; 20 ÷ 5 = 4, 35 ÷ 5 = 7, jadi 4 : 7"]]},
+    {q:["Simplify 12 : 18 : 24.","Sederhanakan 12 : 18 : 24."],r:[2,3,4],sol:[["HCF = 6; 12 ÷ 6 = 2, 18 ÷ 6 = 3, 24 ÷ 6 = 4, so 2 : 3 : 4","FPB = 6; 12 ÷ 6 = 2, 18 ÷ 6 = 3, 24 ÷ 6 = 4, jadi 2 : 3 : 4"]]},
+    {q:["A bag has 15 red beads and 25 blue beads. Write the ratio red : blue in its simplest form.","Sebuah kantong berisi 15 manik merah dan 25 manik biru. Tuliskan rasio merah : biru dalam bentuk paling sederhana."],r:[3,5],sol:[["15 : 25, HCF = 5, so 3 : 5","15 : 25, FPB = 5, jadi 3 : 5"]]},
+    {q:["Simplify 40 cm : 1 m.","Sederhanakan 40 cm : 1 m."],r:[2,5],sol:[["1 m = 100 cm; 40 : 100, HCF = 20, so 2 : 5","1 m = 100 cm; 40 : 100, FPB = 20, jadi 2 : 5"]]},
+    {q:["Simplify 500 g : 2 kg.","Sederhanakan 500 g : 2 kg."],r:[1,4],sol:[["2 kg = 2000 g; 500 : 2000, HCF = 500, so 1 : 4","2 kg = 2000 g; 500 : 2000, FPB = 500, jadi 1 : 4"]]},
+    {q:["Write 5 : 15 in the form 1 : n. What is n?","Tuliskan 5 : 15 dalam bentuk 1 : n. Berapakah n?"],a:3,u:"n",sol:[["Divide by 5: 1 : 3, so n = 3","Bagi dengan 5: 1 : 3, jadi n = 3"]]},
+    {q:["Write 8 : 20 in the form 1 : n. What is n?","Tuliskan 8 : 20 dalam bentuk 1 : n. Berapakah n?"],a:2.5,u:"n",sol:[["Divide by 8: 20 ÷ 8 = 2.5, so 1 : 2.5 and n = 2.5","Bagi dengan 8: 20 ÷ 8 = 2,5, jadi 1 : 2,5 dan n = 2,5"]]},
+    {q:["In a pet shop, the ratio of cats to dogs is 3 : 4. What fraction of these animals are cats?","Di sebuah toko hewan, rasio kucing terhadap anjing adalah 3 : 4. Berapa bagian dari hewan-hewan ini yang merupakan kucing?"],opts:["3/4","3/7","4/7"],optsId:["3/4","3/7","4/7"],a:1,
+     sol:[["Total parts = 3 + 4 = 7. Cats are 3 of the 7 parts, so 3/7.","Jumlah bagian = 3 + 4 = 7. Kucing adalah 3 dari 7 bagian, jadi 3/7."]]},
+    {q:["Which ratio is equivalent to 4 : 6?","Rasio manakah yang senilai dengan 4 : 6?"],opts:["8 : 10","6 : 9","12 : 16"],optsId:["8 : 10","6 : 9","12 : 16"],a:1,
+     sol:[["4 : 6 simplifies to 2 : 3. 6 : 9 also simplifies to 2 : 3 (divide by 3).","4 : 6 disederhanakan menjadi 2 : 3. 6 : 9 juga menjadi 2 : 3 (dibagi 3)."]]}
+  ]
+},
+/* ===================== 5. RATIO & PROPORTION IN CONTEXT ===================== */
+{
+  unit:7, color:"#be185d",
+  title:["Solve ratio and proportion problems in context","Menyelesaikan soal rasio dan proporsi dalam konteks"],
+  materi:`
+    <h3>A. Sharing in a given ratio · Membagi dengan rasio tertentu</h3>
+    ${T("1. Add the parts of the ratio to find the total number of parts.",
+        "1. Jumlahkan bagian-bagian rasio untuk mendapatkan jumlah seluruh bagian.")}
+    ${T("2. Divide the amount by the total number of parts to find the value of one part.",
+        "2. Bagi jumlah yang dibagikan dengan jumlah seluruh bagian untuk mendapatkan nilai satu bagian.")}
+    ${T("3. Multiply each part of the ratio by the value of one part.",
+        "3. Kalikan setiap bagian rasio dengan nilai satu bagian.")}
+    ${T("Check: the shares should add up to the original amount.",
+        "Cek: jumlah semua bagian harus sama dengan jumlah awal.")}
+    <h3>B. Using one known quantity · Menggunakan satu besaran yang diketahui</h3>
+    ${T("If you know one quantity, find the value of one part first, then multiply.",
+        "Jika satu besaran diketahui, cari dulu nilai satu bagian, lalu kalikan.")}
+    ${T("Example: boys : girls = 2 : 5 and there are 10 boys. One part = 10 ÷ 2 = 5, so girls = 5 × 5 = 25.",
+        "Contoh: laki-laki : perempuan = 2 : 5 dan ada 10 laki-laki. Satu bagian = 10 ÷ 2 = 5, jadi perempuan = 5 × 5 = 25.")}
+    <h3>C. Direct proportion · Proporsi langsung (senilai)</h3>
+    ${T("Two quantities are in <b>direct proportion</b> when they increase or decrease at the same rate, for example the number of items and the total cost.",
+        "Dua besaran disebut <b>berbanding lurus (senilai)</b> jika keduanya naik atau turun dengan laju yang sama, misalnya banyak barang dan total harga.")}
+    <div class="key">
+      ${T("<b>Unitary method:</b> first find the value for <b>one</b> item, then multiply by the number you need.",
+          "<b>Metode satuan:</b> cari dulu nilai untuk <b>satu</b> barang, lalu kalikan dengan banyak barang yang dibutuhkan.")}
+      ${T("Example: 4 apples cost Rp10,000, so 1 apple costs Rp2,500, and 6 apples cost Rp15,000.",
+          "Contoh: 4 apel seharga Rp10.000, jadi 1 apel seharga Rp2.500, dan 6 apel seharga Rp15.000.")}
+    </div>
+    ${T("A <b>map scale</b> such as 1 : 50 000 is also a ratio: 1 cm on the map represents 50 000 cm in real life.",
+        "<b>Skala peta</b> seperti 1 : 50.000 juga merupakan rasio: 1 cm pada peta mewakili 50.000 cm pada kenyataannya.")}`,
+  examples:[
+    {q:["Share Rp60,000 between Dina and Eko in the ratio 2 : 3.","Bagikan Rp60.000 kepada Dina dan Eko dengan rasio 2 : 3."],
+     steps:[["Total parts: 2 + 3 = 5.","Jumlah bagian: 2 + 3 = 5."],
+            ["One part: 60,000 ÷ 5 = 12,000.","Satu bagian: 60.000 ÷ 5 = 12.000."],
+            ["Dina: 2 × 12,000 = 24,000. Eko: 3 × 12,000 = 36,000. Check: 24,000 + 36,000 = 60,000 ✔","Dina: 2 × 12.000 = 24.000. Eko: 3 × 12.000 = 36.000. Cek: 24.000 + 36.000 = 60.000 ✔"]],
+     ans:["Dina gets Rp24,000 and Eko gets Rp36,000.","Dina mendapat Rp24.000 dan Eko mendapat Rp36.000."]},
+    {q:["The ratio of boys to girls in a club is 4 : 5. There are 20 boys. How many girls are there?","Rasio laki-laki terhadap perempuan di sebuah klub adalah 4 : 5. Ada 20 anak laki-laki. Berapa banyak anak perempuan?"],
+     steps:[["4 parts = 20 boys, so 1 part = 20 ÷ 4 = 5.","4 bagian = 20 anak laki-laki, jadi 1 bagian = 20 ÷ 4 = 5."],
+            ["Girls = 5 parts = 5 × 5 = 25.","Perempuan = 5 bagian = 5 × 5 = 25."]],
+     ans:["25 girls","25 anak perempuan"]},
+    {q:["3 pens cost Rp12,000. How much do 7 pens cost?","Harga 3 pulpen adalah Rp12.000. Berapa harga 7 pulpen?"],
+     steps:[["Find the cost of one pen: 12,000 ÷ 3 = 4,000.","Cari harga satu pulpen: 12.000 ÷ 3 = 4.000."],
+            ["Multiply by 7: 7 × 4,000 = 28,000.","Kalikan dengan 7: 7 × 4.000 = 28.000."]],
+     ans:["Rp28,000","Rp28.000"]}
+  ],
+  practice:[
+    {q:["Share 40 sweets in the ratio 3 : 5. How many sweets are in the larger share?","Bagikan 40 permen dengan rasio 3 : 5. Berapa permen pada bagian yang lebih besar?"],a:25,u:"sweets / permen",sol:[["3 + 5 = 8 parts; 40 ÷ 8 = 5; larger share = 5 × 5 = 25","3 + 5 = 8 bagian; 40 ÷ 8 = 5; bagian terbesar = 5 × 5 = 25"]]},
+    {q:["Ani and Budi share Rp90,000 in the ratio 4 : 5. How much does Ani get?","Ani dan Budi berbagi Rp90.000 dengan rasio 4 : 5. Berapa bagian Ani?"],a:40000,u:"Rp",sol:[["4 + 5 = 9 parts; 90,000 ÷ 9 = 10,000; Ani = 4 × 10,000 = Rp40,000","4 + 5 = 9 bagian; 90.000 ÷ 9 = 10.000; Ani = 4 × 10.000 = Rp40.000"]]},
+    {q:["Orange paint is made by mixing red and yellow paint in the ratio 2 : 3. How many litres of yellow paint are needed with 10 litres of red paint?","Cat oranye dibuat dengan mencampur cat merah dan kuning dengan rasio 2 : 3. Berapa liter cat kuning yang dibutuhkan untuk 10 liter cat merah?"],a:15,u:"litres / liter",sol:[["2 parts = 10 l, so 1 part = 5 l; yellow = 3 × 5 = 15 litres","2 bagian = 10 l, jadi 1 bagian = 5 l; kuning = 3 × 5 = 15 liter"]]},
+    {q:["On a trip, the ratio of adults to children is 2 : 7. There are 14 adults. How many children are there?","Dalam sebuah perjalanan, rasio orang dewasa terhadap anak-anak adalah 2 : 7. Ada 14 orang dewasa. Berapa banyak anak-anak?"],a:49,u:"children / anak",sol:[["1 part = 14 ÷ 2 = 7; children = 7 × 7 = 49","1 bagian = 14 ÷ 2 = 7; anak-anak = 7 × 7 = 49"]]},
+    {q:["Share 72 kg in the ratio 1 : 2 : 3. What is the largest share?","Bagikan 72 kg dengan rasio 1 : 2 : 3. Berapakah bagian terbesar?"],a:36,u:"kg",sol:[["1 + 2 + 3 = 6 parts; 72 ÷ 6 = 12; largest = 3 × 12 = 36 kg","1 + 2 + 3 = 6 bagian; 72 ÷ 6 = 12; terbesar = 3 × 12 = 36 kg"]]},
+    {q:["5 notebooks cost Rp35,000. How much do 8 notebooks cost?","Harga 5 buku tulis adalah Rp35.000. Berapa harga 8 buku tulis?"],a:56000,u:"Rp",sol:[["1 notebook = 35,000 ÷ 5 = 7,000; 8 × 7,000 = Rp56,000","1 buku = 35.000 ÷ 5 = 7.000; 8 × 7.000 = Rp56.000"]]},
+    {q:["A recipe for 4 people uses 300 g of pasta. How much pasta is needed for 10 people?","Sebuah resep untuk 4 orang menggunakan 300 g pasta. Berapa pasta yang dibutuhkan untuk 10 orang?"],a:750,u:"g",sol:[["1 person = 300 ÷ 4 = 75 g; 10 × 75 = 750 g","1 orang = 300 ÷ 4 = 75 g; 10 × 75 = 750 g"]]},
+    {q:["The ratio of boys to girls in a school is 3 : 5. There are 24 more girls than boys. How many students are there altogether?","Rasio siswa laki-laki terhadap perempuan di sebuah sekolah adalah 3 : 5. Siswa perempuan 24 orang lebih banyak daripada laki-laki. Berapa jumlah seluruh siswa?"],a:96,u:"students / siswa",sol:[["Difference = 5 − 3 = 2 parts = 24, so 1 part = 12","Selisih = 5 − 3 = 2 bagian = 24, jadi 1 bagian = 12"],["Total = 8 parts = 8 × 12 = 96 students","Total = 8 bagian = 8 × 12 = 96 siswa"]]},
+    {q:["A map has a scale of 1 : 50 000. Two villages are 4 cm apart on the map. What is the real distance in km?","Sebuah peta memiliki skala 1 : 50.000. Dua desa berjarak 4 cm pada peta. Berapa jarak sebenarnya dalam km?"],a:2,u:"km",sol:[["4 × 50 000 = 200 000 cm","4 × 50.000 = 200.000 cm"],["200 000 cm ÷ 100 = 2000 m; 2000 m ÷ 1000 = 2 km","200.000 cm ÷ 100 = 2000 m; 2000 m ÷ 1000 = 2 km"]]},
+    {q:["A car travels 150 km in 2 hours at a constant speed. How far does it travel in 5 hours?","Sebuah mobil menempuh 150 km dalam 2 jam dengan kecepatan tetap. Berapa jarak yang ditempuh dalam 5 jam?"],a:375,u:"km",sol:[["1 hour = 150 ÷ 2 = 75 km; 5 × 75 = 375 km","1 jam = 150 ÷ 2 = 75 km; 5 × 75 = 375 km"]]}
+  ]
 }
 ];
 
@@ -259,6 +380,7 @@ let current = 0;
 function renderTabs(){
   tabsEl.innerHTML = sections.map((s,i)=>`
     <button class="tab ${i===current?'active':''}" style="--accent:${s.color}" onclick="go(${i})">
+      <span class="id" style="font-style:normal;font-weight:700;color:${s.color}">UNIT ${s.unit}</span>
       <b><span class="num">${i+1}</span>${s.title[0]}</b>
       <span class="id">${s.title[1]}</span>
     </button>`).join("");
@@ -278,7 +400,7 @@ function renderSection(i){
     if(p.opts){
       input = `<div class="row">${p.opts.map((o,j)=>`<button class="opt" id="o${i}_${k}_${j}" onclick="pick(${i},${k},${j})">${o}<br><span class="id">${p.optsId[j]}</span></button>`).join("")}</div>`;
     } else {
-      input = `<div class="row"><input type="text" id="in${i}_${k}" placeholder="answer / jawaban" onkeydown="if(event.key==='Enter')check(${i},${k})"> <b>${p.u}</b>
+      input = `<div class="row"><input type="text" id="in${i}_${k}" placeholder="${p.r?'e.g. / misal 2:3':'answer / jawaban'}" onkeydown="if(event.key==='Enter')check(${i},${k})"> <b>${p.u||''}</b>
         <button class="btn" onclick="check(${i},${k})">Check · Cek</button></div>`;
     }
     return `<div class="q"><span class="n">${k+1}.</span>${T(p.q[0],p.q[1])}
@@ -290,11 +412,12 @@ function renderSection(i){
 
   contentEl.innerHTML = `
   <div class="section" style="--accent:${s.color}">
-    <div class="card"><h2>${i+1}. ${s.title[0]}</h2><span class="id">${s.title[1]}</span></div>
+    <div class="card"><span class="id" style="font-style:normal;font-weight:700">UNIT ${s.unit}</span><h2>${i+1}. ${s.title[0]}</h2><span class="id">${s.title[1]}</span></div>
     <div class="card"><h3>📘 Lesson · Materi</h3>${s.materi}</div>
     <div class="card"><h3>✏️ Worked Examples · Pembahasan 3 Soal</h3>${ex}</div>
     <div class="card"><h3>🧠 Practice · Latihan 10 Soal</h3>
       ${T("Type your answer as a number (use a decimal point, e.g. 4.5), then press Check.","Ketik jawabanmu dalam bentuk angka (gunakan titik desimal, misalnya 4.5), lalu tekan Cek.")}
+      ${s.unit===7?T("For a ratio answer, type it in its simplest form with a colon, e.g. 2:3.","Untuk jawaban berupa rasio, ketik dalam bentuk paling sederhana dengan titik dua, misalnya 2:3."):""}
       ${pr}</div>
     <div class="score" style="--accent:${s.color}"><div id="sc"></div>
       <button class="btn" onclick="resetSec(${i})">Reset</button></div>
@@ -304,6 +427,8 @@ function renderSection(i){
 
 function parseNum(v){
   v = v.trim().replace(/\s/g,"").replace(/rp/i,"");
+  // Indonesian thousands separator, e.g. 40.000 or 12.000
+  if(/^\d{1,3}(\.\d{3})+$/.test(v)) v = v.replace(/\./g,"");
   // allow comma as decimal if single comma and no dot
   if(/^\d+,\d+$/.test(v) && !/^\d{1,3},\d{3}$/.test(v)) v = v.replace(",",".");
   v = v.replace(/,/g,"");
@@ -311,7 +436,13 @@ function parseNum(v){
 }
 function check(i,k){
   const p = sections[i].practice[k];
-  const v = parseNum(document.getElementById(`in${i}_${k}`).value);
+  const raw = document.getElementById(`in${i}_${k}`).value;
+  if(p.r){
+    const parts = raw.split(":").map(x=>parseNum(x));
+    mark(i,k, parts.length===p.r.length && parts.every((x,j)=>x===p.r[j]));
+    return;
+  }
+  const v = parseNum(raw);
   const ok = !isNaN(v) && Math.abs(v - p.a) < 1e-6 * Math.max(1,Math.abs(p.a)) + 0.001;
   mark(i,k,ok);
 }
